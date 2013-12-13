@@ -25,12 +25,13 @@ public class ArtificialNeuron {
 	 * internal weight structure, as well as its activationFunction. 
 	 * @param inputs the inputs to this <tt>ArtificialNeuron</tt>
 	 * @return the output activation level of this <tt>ArtificialNeuron</tt>
+	 * @throws IllegalArgumentException if the number of inputs does not match the number of weights 
 	 */
 	public double feed(List<Double> inputs) {
 		
 		//verify that the number of inputs match the number weights
 		if(inputs.size() != inputWeights.size()) {
-			throw new IllegalArgumentException("Number of inputs " +inputs.size()+ " exceeds number of weights " +inputWeights.size());
+			throw new IllegalArgumentException("Number of inputs " +inputs.size()+ " does not match number of weights " +inputWeights.size());
 		}
 		
 		//weigh the inputs accordingly
@@ -68,6 +69,7 @@ public class ArtificialNeuron {
 		/**
 		 * Builds the default parameter list for the <tt>ArtificialNeuron</tt>.
 		 * @param numberOfWeights the number of weights this <tt>ArtificialNeuron</tt>.
+		 * @throws IllegalArgumentException if the number of weights is less than 1
 		 */
 		public Builder(int numberOfWeights) {
 			
@@ -93,8 +95,9 @@ public class ArtificialNeuron {
 		}
 		
 		/**
-		 * Override existing weights.
+		 * Override existing weights with parameter list.
 		 * @param w the new weights
+		 * @throws IllegalArgumentException if the parameter is null, or if there are no elements in it
 		 */
 		public Builder inputWeights(List<Double> w) {
 			if(w == null || w.size() < 1) {
@@ -108,6 +111,7 @@ public class ArtificialNeuron {
 		/**
 		 * Override the existing <tt>ActivationFunction</tt>.
 		 * @param f the new <tt>ActivationFunction</tt>.
+		 * @throws IllegalArgumentException if the parameter is null
 		 */
 		public Builder activationFunction(ActivationFunction f) {
 			if(f == null) {

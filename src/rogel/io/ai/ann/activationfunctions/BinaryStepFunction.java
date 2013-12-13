@@ -22,11 +22,11 @@ public class BinaryStepFunction implements ActivationFunction
 	/**
 	 * Creates a <tt>BinaryStepFunction</tt>, which returns <tt>valueIfGreater</tt> if given a list
 	 * of inputs that sum to more than the <tt>threshold</tt>, and <tt>valueIfLess</tt> otherwise.
-	 * @param threshold the threshold value of this function
 	 * @param valueIfGreater the value to return if inputs sum to more than the <tt>threshold</tt>
 	 * @param valueIfLess the value to return if inputs sum to less than the <tt>threshold</tt>
+	 * @param threshold the threshold value of this function
 	 */
-	public BinaryStepFunction(double threshold, double valueIfGreater, double valueIfLess) {
+	public BinaryStepFunction(double valueIfLess, double valueIfGreater, double threshold) {
 		this.threshold = threshold;
 		this.valueIfGreaterThanThreshold = valueIfGreater;
 		this.valueIfLessThanThreshold = valueIfLess;
