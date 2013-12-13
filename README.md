@@ -6,6 +6,8 @@ A tour through AI algorithms.
 Planned Buffet
 --------------
 
+-   Artificial Life
+
 -   Artificial Neural Networks
 
 -   Automated Planning
@@ -15,6 +17,8 @@ Planned Buffet
 -   Boolean Satisfiability
 
 -   Game Playing
+
+-   Game Theory and Utility-Based Decision Making
 
 -   Genetic Algorithms
 
