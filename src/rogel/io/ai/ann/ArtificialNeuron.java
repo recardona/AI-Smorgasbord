@@ -49,6 +49,8 @@ public class ArtificialNeuron {
 	
 	
 	
+	
+	
 	/**
 	 * @param inputWeights the inputWeights to set
 	 * @throws IllegalArgumentException if the inputWeights are null, or empty
@@ -62,6 +64,28 @@ public class ArtificialNeuron {
 		}
 		
 		this.inputWeights = inputWeights;
+	}
+	
+	
+	/**
+	 * @return the inputWeights
+	 */
+	public List<Double> getInputWeights() {
+		return inputWeights;
+	}
+
+
+
+
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("[ArtificialNeuron: ");
+		sb.append("(Weights: "); sb.append(this.inputWeights.toString()); sb.append("), ");
+		sb.append("(Bias: "); sb.append(this.bias); sb.append("), ");
+		sb.append("(ActivationFunction: "); sb.append(this.activationFunction.toString()); sb.append(")]");
+		return sb.toString();
 	}
 
 
