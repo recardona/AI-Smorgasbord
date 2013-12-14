@@ -49,5 +49,16 @@ public class BinaryStepFunction implements ActivationFunction
 	public double getThreshold() {
 		return threshold;
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.getClass().getSimpleName()); sb.append(" : ");
+		sb.append("with threshold "); sb.append(this.threshold);
+		sb.append(" and range: ["); 
+		sb.append(this.valueIfLessThanThreshold); sb.append(","); sb.append(this.valueIfGreaterThanThreshold);
+		sb.append("]");
+		return sb.toString();
+	}
 
 }
