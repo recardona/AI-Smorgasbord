@@ -116,15 +116,7 @@ public class ArtificialNeuronTest {
 		twoInputs.add(0.5);
 		twoInputs.add(0.0);
 		activationLevel = b.feed(twoInputs);
-		assertEquals("Given the input in "+twoInputs.toString()+ " the neuron not should fire.", 1.0, activationLevel, 0.0);
-		
-		
-		
-		
-
-
-
-		
+		assertEquals("Given the input in "+twoInputs.toString()+ " the neuron not should fire.", 1.0, activationLevel, 0.0);		
 	}
 
 }

@@ -47,6 +47,25 @@ public class ArtificialNeuron {
 		return activationFunction.compute(weightedInputs);
 	}
 	
+	
+	
+	/**
+	 * @param inputWeights the inputWeights to set
+	 * @throws IllegalArgumentException if the inputWeights are null, or empty
+	 */
+	public void setInputWeights(List<Double> inputWeights) {
+		
+		if(inputWeights == null) {
+			throw new IllegalArgumentException("Weights cannot be null.");
+		} else if(inputWeights.size() < 1) {
+			throw new IllegalArgumentException("Must have at least one weight.");
+		}
+		
+		this.inputWeights = inputWeights;
+	}
+
+
+
 	/**
 	 * Private constructor, which should enforce the use of the Builder.
 	 * @param b a builder object.
@@ -67,8 +86,9 @@ public class ArtificialNeuron {
 		private double bias;
 		
 		/**
-		 * Builds the default parameter list for the <tt>ArtificialNeuron</tt>.
-		 * @param numberOfWeights the number of weights this <tt>ArtificialNeuron</tt>.
+		 * Builds the default parameter list for the <tt>ArtificialNeuron</tt>: all weights are
+		 * initialized to a value between -1.0 and 1.0, and the bias is set to 1. 
+		 * @param numberOfWeights the number of weights for this <tt>ArtificialNeuron</tt>.
 		 * @throws IllegalArgumentException if the number of weights is less than 1
 		 */
 		public Builder(int numberOfWeights) {
